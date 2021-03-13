@@ -1,3 +1,24 @@
+/******************************Things changed in Configuration.h & Configuration_adv.h (JUSTIN) ***********************************
+ * https://crosslink.io/marlin-2-0-memory-usage-by-feature/
+ * 
+ * #define SHOW_BOOTSCREEN                // Disabled
+ * #define SHOW_CUSTOM_BOOTSCREEN         // Disabled
+ * #define CUSTOM_STATUS_SCREEN_IMAGE     // Disabled
+ * #define LCD_INFO_MENU                  // Enabled, shows useless 'about printer' menu
+ * #define STATUS_MESSAGE_SCROLLING       // Enabled
+ * #define DOGM_SD_PERCENT                // Disabled, show print % bar graph
+ * #define NO_WORKSPACE_OFFSETS           // Disabled
+ * #define ARC_SUPPORT                    // Enabled
+ * #define NO_VOLUMETRICS                 // Disabled, not used without width sensor?
+ * #define SCROLL_LONG_FILENAMES          // Enabled
+ * #define SLIM_LCD_MENUS                 // Disabled. 'extraneous' menu items
+ * #define SPEAKER                        // Disabled. Remove beeper if you don't want it.
+ * #define LEVEL_BED_CORNERS              // Enabled
+ * #define PRINTJOB_TIMER_AUTOSTART       // Enabled
+ * #define PRINTCOUNTER                   // Enabled
+/******************************Things changed in Configuration.h & Configuration_adv.h (JUSTIN) ***********************************
+
+
 /**
  * Marlin 3D Printer Firmware
  * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
@@ -85,7 +106,7 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
-#define SHOW_BOOTSCREEN
+// #define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 //#define SHOW_CUSTOM_BOOTSCREEN
@@ -1236,7 +1257,7 @@
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-//#define MESH_BED_LEVELING
+#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
@@ -1344,13 +1365,13 @@
 //#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
-  #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
+  #define MESH_EDIT_Z_STEP  0.02 // (mm) Step size while manually probing Z axis.
   #define LCD_PROBE_Z_RANGE 4     // (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment
-  //#define MESH_EDIT_MENU        // Add a menu to edit mesh points
+  #define MESH_EDIT_MENU        // Add a menu to edit mesh points
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
@@ -1636,7 +1657,7 @@
  *
  * View the current statistics with M78.
  */
-//#define PRINTCOUNTER
+#define PRINTCOUNTER
 
 /**
  * Password
